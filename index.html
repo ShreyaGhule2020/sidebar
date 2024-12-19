@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link href="https://kit.fontawesome.com/7b75a617ec.css" rel="stylesheet">
+   
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .log-section {
+            background-color: #d0b2fc; 
+            color: rgb(18, 1, 1);
+            padding: 20px;
+            font-size: 100px;
+            font-family:cursive;
+            text-align: center;
+            height: 100vh;  
+             display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .log-title {
+            font-family: cursive;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 50px;
+            color: rgb(24, 74, 65);
+            text-shadow: 2px 2px 5px rgba(247, 228, 228, 0.2);
+        }
+
+        .log-description {
+            font-size: 25px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgb(73, 3, 48);
+            font-family: cursive;
+            text-align: center;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar {
+            position: fixed; 
+             top: 0;
+            left: 0;
+            height: 100%; 
+            width: 250; 
+            border-right: 5px solid rgb(134, 127, 127);
+            box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3); 
+            background-color: #c5f9f9;
+            display: flex;
+            flex-direction: column;
+            visibility: hidden;
+            transition: width 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+        }
+
+        .menu-item {
+            background-color: rgb(247, 181, 237);
+            padding: 10px 15px; 
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 0 25px 25px 0;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background-color: #f6d6d6;
+            border: 0.5px solid rgb(95, 91, 91);
+        }
+
+        .menu-icon {
+            font-size: 20px;
+            margin-right: 15px; 
+        }
+
+        .menu-text {
+            text-decoration: none;
+            color: rgb(26, 16, 93);
+            font-size: 16px;
+            font-family: cursive;
+        }
+
+        .ham-burgur{
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            color: rgb(20, 20, 20);
+            font-size: 30px;
+            }
+
+        .close{
+            text-align: right;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="log-section">
+        <h1 class="log-title"> Aakash </h1>
+        <p class="log-description">
+            Aakash PrimeClass is a live stream class that delivers 
+            education through New-Age Satellite Technology across India, 
+            thereby transforming learning and advancing education. The classes 
+            enable students to see, listen and participate in a lecture and 
+            interact with the faculty spontaneously and naturally as in a regular 
+            classroom. They can also raise queries, respond to polls, attempt 
+            multiple choice questions and assessments & mark attendance.
+        </p>
+    </div>
+
+    <i class="fa-solid fa-bars ham-burgur" onclick="openSidebar()" id="ham-menu"></i>
+
+    <div class="sidebar" id="sidebar">
+        <div class="close" onclick="closeSidebar()">
+            <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        
+        <div class="menu-item">
+            <i class="fa-solid fa-house menu-icon"></i>
+            <a href="home" class="menu-text">Home</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-user menu-icon"></i>
+            <a href="home" class="menu-text">About</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-envelope menu-icon"></i>
+            <a href="home" class="menu-text">Contact</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-toolbox menu-icon"></i>
+            <a href="home" class="menu-text">Preferences</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-gear menu-icon" ></i>
+             <a href="home" class="menu-text">Setting</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-right-from-bracket menu-icon"></i>
+             <a href="home" class="menu-text">Logout</a>
+        </div>
+    </div>
+
+        <script src="https://kit.fontawesome.com/7b75a617ec.js" crossorigin="anonymous"></script>
+
+    
+    <script>
+        function openSidebar(){
+            const sidebarEle = document.getElementById('sidebar');
+            sidebarEle.style.visibility='visible';
+
+            const hamburgurEle = document.getElementById('ham-menu');
+            hamburgurEle.style.visibility = 'hidden';
+        }
+
+        function closeSidebar(){
+            const sidebarEle = document.getElementById('sidebar');
+            sidebarEle.style.visibility='hidden';
+
+            const hamburgurEle = document.getElementById('ham-menu');
+            hamburgurEle.style.visibility = 'visible';
+        }
+    </script>
+</body>
+</html>
